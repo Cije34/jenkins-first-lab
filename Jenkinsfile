@@ -23,7 +23,7 @@ pipeline {
                 sh "docker build -t ${IMAGE_NAME}:v1.0.${env.BUILD_NUMBER} ."
             }
         }
-
+	// Push to Docker hub
 	stage("Push to Cloud"){
 	    steps {
 				echo "Uplouding to Docker"
