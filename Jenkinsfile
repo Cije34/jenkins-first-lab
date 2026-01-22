@@ -27,8 +27,8 @@ pipeline {
 	stage("Push to Cloud"){
 	    steps {
 				echo "Uplouding to Docker"
-		
-				withCredentials([usernamePassword(credensialId: DOCKER_CRED_ID,usernameVariable: 'USER', passwordVariable: 'PASS')]){
+				
+				withCredentials([usernamePassword(credensialsId: DOCKER_CRED_ID,usernameVariable: 'USER', passwordVariable: 'PASS')]){
 		
 				sh 'echo $PASS | docker login -u $USER --password-stdin'
 
